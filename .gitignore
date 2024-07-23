@@ -1,6 +1,7 @@
 # [ide]
 .zed/
 .vscode/
+.nvimlog
 
 # build output
 dist/
