@@ -1,21 +1,21 @@
 export const THEME_CONFIG: App.Locals['config'] = {
   /** blog title */
-  title: "最小化可复现",
+  title: "摸索摸索",
   /** your name */
-  author: "Julyfun",
+  author: "JIEFUDI",
   /** website description */
   desc: "Rediscory the beauty of typography",
   /** your deployed domain */
-  website: "https://julyfun.vercel.app/",
+  website: "https://jiefudiblog.top/",
   /** your locale */
   locale: "en-us",
   /** theme style */
-  themeStyle: "light",
+  themeStyle: "dark",
   /** your socials */
   socials: [
     {
       name: "github",
-      href: "https://github.com/julyfun",
+      href: "https://github.com/dingj3Jiangding",
     },
   ],
   /** your header info */
