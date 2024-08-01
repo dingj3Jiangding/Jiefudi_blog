@@ -1,8 +1,8 @@
 ---
 title: "Welcome to Jiefudi's Blog!"
-pubDate: "2024/8/1"
-description: "Initial post of this blog"
-catagories: ['Just say sth']
+description: ''
+pubDate: '2024-7-24'
+categories: ['how-to']
 ---
 
 Welcome! This is the cyberspace and profile of Jiefudi.
