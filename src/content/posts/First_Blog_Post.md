@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Jiefudi's Blog!"
-description: ''
+description: 'The first Post of this Blog'
 pubDate: '2024-7-24'
 categories: ['how-to']
 ---
