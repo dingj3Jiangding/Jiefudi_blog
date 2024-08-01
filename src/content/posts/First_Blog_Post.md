@@ -2,7 +2,7 @@
 title: "Welcome to Jiefudi's Blog!"
 description: 'The first Post of this Blog'
 pubDate: '2024/08/01'
-categories: ['how-to']
+categories: ['say sth']
 ---
 
 Welcome! This is the cyberspace and profile of Jiefudi.
