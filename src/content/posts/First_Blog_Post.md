@@ -5,5 +5,7 @@ pubDate: '2024/08/01'
 categories: ['say sth']
 ---
 
+>Thanks to Julyfun for sharing such a great template so that I can use it ti build my own.
+
 Welcome! This is the cyberspace and profile of Jiefudi.
 I hope I can say anything here.
