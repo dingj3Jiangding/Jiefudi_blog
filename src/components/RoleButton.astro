@@ -1,20 +1,20 @@
 ---
 // src/components/RoleButton.astro
-import { setRole } from '~/scripts/setRole';
+// import { setRole } from '~/utils/setRole';
 
-const { role, label, currentRole } = Astro.props;
+// const { role, label, currentRole } = Astro.props;
 
-function handleClick() {
-  setRole(role);
-  location.reload();
-}
----
+// function handleClick() {
+//   setRole(role);
+//   location.reload();
+// }
+// ---
 
-<button
-  class="px-3 py-1 rounded"
-  onclick={handleClick}
-  disabled={currentRole === role}
-  client:load
->
-  {label}
-</button>
+// <button
+//   class="px-3 py-1 rounded"
+//   onclick={handleClick}
+//   disabled={currentRole === role}
+//   client:load
+// >
+//   {label}
+// </button>
