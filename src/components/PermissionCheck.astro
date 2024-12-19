@@ -1,13 +1,15 @@
 ---
 // src/components/PermissionCheck.astro
 ---
-<script client:load>
+<script>
   import { getRole } from '~/utils/setRole';
 
-  const userRole = getRole();
+  if (typeof window !== 'undefined') {
+    const userRole = getRole();
 
-  if (userRole !== 'root') {
-    alert('您无权限查看此页面');
-    window.location.href = '/'; // 跳转到主页或其他页面
+    if (userRole !== 'root') {
+      alert('您无权限查看此页面');
+      window.location.href = '/'; // 跳转到主页或其他页面
+    }
   }
 </script>
