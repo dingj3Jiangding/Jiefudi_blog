@@ -3,7 +3,7 @@ title: "Welcome to Jiefudi's Blog!"
 description: 'The first Post of this Blog'
 pubDate: '2024/08/01'
 categories: ['Announce']
-role: ['root']
+role: 'root'
 ---
 
 >Thanks to Julyfun for sharing such a great template so that I can use it to build my own.
