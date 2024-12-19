@@ -27,6 +27,10 @@ const { Content } = await entry.render()
 const { translate: t } = Astro.locals
 const userRole = getRole(); // 从 Cookie 中获取角色
 
+if (entry.role === 'root' && userRole !== 'root') {
+  throw new Error('您无权限查看此文章');
+}
+
 function getUrl(slug: string) {
   return `/posts/${slug}`
 }

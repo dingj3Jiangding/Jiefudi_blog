@@ -2,13 +2,7 @@ import { getCollection } from 'astro:content'
 import sanitizeHtml from 'sanitize-html'
 import MarkdownIt from 'markdown-it'
 
-type PostData = {
-  title: string;
-  pubDate: Date;
-  categories: string[];
-  description?: string;
-  role?: string; // 显式添加 role 属性
-};
+
 
 export async function getCategories() {
   const posts = await getPosts()
@@ -29,14 +23,14 @@ export async function getCategories() {
 }
 
 export async function getPosts() {
-  const posts = await getCollection<PostData>('posts')
+  const posts = await getCollection('posts')
   posts.sort((a, b) => {
     const aDate = a.data.pubDate || new Date()
     const bDate = b.data.pubDate || new Date()
     return bDate.getTime() - aDate.getTime()
   });
   posts.forEach((post) => {
-    post.data.role = post.data.role || 'visitor'; // 设置默认角色
+    post.role = post.role || 'visitor'; // 设置默认角色
   });
   return posts
 }
