@@ -19,18 +19,28 @@ export async function getStaticPaths() {
 
 const { posts } = Astro.props
 const { category, name } = Astro.params
-const userRole = getRole();
+const userRole = getRole(); // 获取用户角色
 const { category_map } = Astro.locals.config;
 
-
+// 修复拼写错误
 const accessibleCategories = category_map.filter(
-  (category) => userRole === "root" || category.role === 'vistor'
+  (category) => userRole === "root" || category.role === 'visitor'
 );
 
+// 过滤 posts，仅显示用户有权限访问的文章
+const accessiblePosts = posts.filter((post) =>
+  accessibleCategories.some((cat) => post.data.categories?.includes(cat.name))
+);
 ---
 
 <LayoutDefault>
   <ListSection title={name}>
-    {posts.map((post) => <ListItem title={post.data.title} href={`/posts/${post.slug}/`} description={formatDate(post.data.pubDate)} />)}
+    {accessiblePosts.map((post) => (
+      <ListItem
+        title={post.data.title}
+        href={`/posts/${post.slug}/`}
+        description={formatDate(post.data.pubDate)}
+      />
+    ))}
   </ListSection>
 </LayoutDefault>
