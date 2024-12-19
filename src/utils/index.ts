@@ -27,6 +27,11 @@ export async function getPosts() {
     const bDate = b.data.pubDate || new Date()
     return bDate.getTime() - aDate.getTime()
   })
+  posts.forEach((post) => {
+    if (!post.data.role) {
+      post.data.role = 'visitor'; // 默认角色
+    }
+  });
   return posts
 }
 
