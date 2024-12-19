@@ -30,7 +30,7 @@ export async function getPosts() {
     return bDate.getTime() - aDate.getTime()
   });
   posts.forEach((post) => {
-    post.role = post.role || 'visitor'; // 设置默认角色
+    post.data.role = post.data.role || 'visitor'; // 设置默认角色
   });
   return posts
 }
