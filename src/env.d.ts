@@ -33,6 +33,7 @@ declare namespace App {
       category_map: Array<{
         name: string;
         path: string;
+        role: string;
       }>,
       /** comments */
       comments?: {
