@@ -45,6 +45,10 @@ export const THEME_CONFIG: App.Locals['config'] = {
   category_map: [
     { name: "胡适", path: "hu-shi" },
     { name: "Announce", path: "announce"}
+    { name: "Dairy", path: "dairy"}
+    { name: "Tech_Blog", path: "tech_blog"}
+    { name: "Announce", path: "announce"}
+
   ],
   /** your comment provider */
   comments: {
