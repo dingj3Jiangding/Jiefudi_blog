@@ -6,6 +6,7 @@ type PostData = {
   title: string;
   pubDate: Date;
   categories: string[];
+  description?: string;
   role?: string; // 显式添加 role 属性
 };
 
