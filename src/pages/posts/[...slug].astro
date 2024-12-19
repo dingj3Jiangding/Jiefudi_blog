@@ -26,9 +26,8 @@ const { entry, prev, next } = Astro.props
 const { Content } = await entry.render()
 const { translate: t } = Astro.locals
 const userRole = getRole(); // 从 Cookie 中获取角色
-const { post } = Astro.props;
 
-if (post.role === 'root' && userRole !== 'root') {
+if (entry.role === 'root' && userRole !== 'root') {
   throw new Error('您无权限查看此文章');
 }
 
