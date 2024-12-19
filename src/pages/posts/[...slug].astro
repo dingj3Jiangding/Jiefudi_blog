@@ -27,7 +27,7 @@ const { Content } = await entry.render()
 const { translate: t } = Astro.locals
 const userRole = getRole(); // 从 Cookie 中获取角色
 
-entry.data.role = entry.data.role || 'visitor'; // 如果没有定义 role，默认为 visitor
+const entry.data.role = entry.data.role || 'visitor'; // 如果没有定义 role，默认为 visitor
 
 if (entry.data.role === 'root' && userRole !== 'root') {
   throw new Error('您无权限查看此文章');

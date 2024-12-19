@@ -2,6 +2,13 @@ import { getCollection } from 'astro:content'
 import sanitizeHtml from 'sanitize-html'
 import MarkdownIt from 'markdown-it'
 
+type PostData = {
+  title: string;
+  pubDate: Date;
+  categories: string[];
+  role?: string; // 显式添加 role 属性
+};
+
 export async function getCategories() {
   const posts = await getPosts()
 
@@ -21,7 +28,7 @@ export async function getCategories() {
 }
 
 export async function getPosts() {
-  const posts = await getCollection('posts')
+  const posts = await getCollection<PostData>('posts')
   posts.sort((a, b) => {
     const aDate = a.data.pubDate || new Date()
     const bDate = b.data.pubDate || new Date()
