@@ -26,9 +26,6 @@ export async function getPosts() {
     const aDate = a.data.pubDate || new Date()
     const bDate = b.data.pubDate || new Date()
     return bDate.getTime() - aDate.getTime()
-  })
-  posts.forEach((post) => {
-    (post.data as any).role = post.data.role || 'visitor'; // 使用类型断言忽略检查
   });
   return posts
 }
