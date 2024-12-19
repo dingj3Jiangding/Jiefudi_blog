@@ -5,7 +5,7 @@ import { getPosts } from '~/utils'
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro'
 import Pagination from '~/components/Pagination.astro'
 import Comments from '~/components/Comments.astro'
-import { getRole } from '~/utils/setRole';
+import PermissionCheck from '~/components/PermissionCheck.astro';
 
 export const getStaticPaths = (async ({}) => {
   const posts = await getPosts()
@@ -26,18 +26,11 @@ const { entry, prev, next } = Astro.props
 const { Content } = await entry.render()
 const { translate: t } = Astro.locals;
 
-<client:only>
-  <script>
-    import { getRole } from '~/utils/setRole';
+<PermissionCheck client:only />
 
-    const userRole = getRole();
-
-    if (userRole !== 'root') {
-      alert('您无权限查看此页面');
-      window.location.href = '/';
-    }
-  </script>
-</client:only>
+function getUrl(id: string) {
+  return `/posts/${id}`
+}
 
 ---
 
