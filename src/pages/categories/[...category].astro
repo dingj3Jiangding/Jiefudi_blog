@@ -23,7 +23,7 @@ const userRole = getRole();
 const { category_map } = Astro.locals.config;
 
 
-const accessibleCatagories = category_map.filter(
+const accessibleCategories = category_map.filter(
   (category) => userRole === "root" || category.role === 'vistor'
 );
 
