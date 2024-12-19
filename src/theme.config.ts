@@ -44,6 +44,7 @@ export const THEME_CONFIG: App.Locals['config'] = {
   /** your category name mapping, which the `path` will be shown in the url */
   category_map: [
     { name: "胡适", path: "hu-shi" },
+    { name: "Announce", path: "announce"}
   ],
   /** your comment provider */
   comments: {
