@@ -1,5 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
+import { setRole, getRole } from '~/utils/setRole' // 引入角色切换逻辑
+
 
 type Props = HTMLAttributes<'header'>
 
@@ -8,6 +10,9 @@ const { ...attrs } = Astro.props
 const { title, author, socials, navs } = Astro.locals.config
 
 const { translate: t } = Astro.locals
+
+// 获取当前角色
+const currentRole = getRole(); // 从 Cookie 中读取用户角色
 ---
 
 <header un-lg="grow-1 justify-between items-start" un-flex="~ col gap-2.5" class="text-center" {...attrs}>
@@ -43,4 +48,23 @@ const { translate: t } = Astro.locals
       }
     </ul>
   </nav>
+
+  <!-- 角色切换按钮 -->
+  <div un-flex="~ row gap-2 justify-center mt-4">
+    <p>当前角色: {currentRole}</p>
+    <button
+      class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-700"
+      onClick={() => { setRole('visitor'); location.reload(); }}
+      disabled={currentRole === 'visitor'}
+    >
+      切换到 Visitor
+    </button>
+    <button
+      class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-700"
+      onClick={() => { setRole('root'); location.reload(); }}
+      disabled={currentRole === 'root'}
+    >
+      切换到 Root
+    </button>
+  </div>
 </header>

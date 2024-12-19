@@ -43,10 +43,10 @@ export const THEME_CONFIG: App.Locals['config'] = {
   ],
   /** your category name mapping, which the `path` will be shown in the url */
   category_map: [
-    { name: "胡适", path: "hu-shi" },
-    { name: "Announce", path: "announce"},
-    { name: "Dairy", path: "dairy"},
-    { name: "Tech_Blog", path: "tech_blog"}
+    { name: "Announce", path: "announce", role: "vistor"},
+    { name: "Dairy", path: "dairy", role: "root"},
+    { name: "Tech_Blog", path: "tech_blog", role: "root"},
+    { name: "Obsidian_notes", path: "Obsdian_notes", role: "root"}
   ],
   /** your comment provider */
   comments: {
