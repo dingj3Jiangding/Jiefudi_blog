@@ -50,7 +50,7 @@ export const THEME_CONFIG: App.Locals['config'] = {
   comments: {
     disqus: {
       // please change this to your disqus shortname
-      shortname: "typography-astro",
+      shortname: "jiefudi-blog",
     },
     // giscus: {
     //   repo: 'moeyua/astro-theme-typography',
