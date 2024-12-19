@@ -24,7 +24,7 @@ const { category_map } = Astro.locals.config;
 
 // 修复拼写错误
 const accessibleCategories = category_map.filter(
-  (category) => userRole === "root" || category.data.role === 'visitor'
+  (category) => userRole === "root" || category.role === 'visitor'
 );
 
 // 过滤 posts，仅显示用户有权限访问的文章
