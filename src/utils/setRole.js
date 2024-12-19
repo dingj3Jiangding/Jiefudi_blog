@@ -1,5 +1,5 @@
 // src/scripts/setRole.js
-export function setRole() {
+export function setRole(role) {
     document.cookie = `role = ${role}; path=/; max-age = 86400`;
 }
 
