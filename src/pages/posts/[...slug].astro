@@ -26,7 +26,7 @@ const { entry, prev, next } = Astro.props
 const { Content } = await entry.render()
 const { translate: t } = Astro.locals;
 
-<PermissionCheck />
+
 
 function getUrl(id: string) {
   return `/posts/${id}`
@@ -34,6 +34,7 @@ function getUrl(id: string) {
 
 ---
 
+<PermissionCheck />
 <LayoutDefault title={entry.data.title} desc={entry.data.description} banner={entry.data.banner}>
   <Post post={entry}>
     <Content />
