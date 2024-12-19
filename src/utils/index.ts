@@ -34,6 +34,9 @@ export async function getPosts() {
     const bDate = b.data.pubDate || new Date()
     return bDate.getTime() - aDate.getTime()
   });
+  posts.forEach((post) => {
+    post.data.role = post.data.role || 'visitor'; // 设置默认角色
+  });
   return posts
 }
 
